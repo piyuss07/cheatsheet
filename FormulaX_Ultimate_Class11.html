@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FormulaX Ultimate CBSE Class 11</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Pacifico&family=Montserrat:wght@600&family=Lobster&family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Segoe UI,sans-serif;color:#fff;
+background:linear-gradient(rgba(2,6,23,.65),rgba(30,41,59,.75)),url("luxury-red-sport-car-wallpaper-generative-ai-photo.jpg") center/cover no-repeat;
+background-attachment:fixed;
+background-size:cover;
+background-blend-mode:overlay;
+overflow-x:hidden;
+}
+.bg{position:fixed;inset:0;background:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.12),transparent 20%),
+radial-gradient(circle at 80% 30%,rgba(255,0,255,.1),transparent 20%);
+animation:bg-pulse 8s infinite alternate;
+z-index:-1;
+}
+@keyframes bg-pulse{from{transform:scale(1)}to{transform:scale(1.08)}}
+@keyframes bg{0%{background-position:0 50%}50%{background-position:100% 50%}100%{background-position:0 50%}}
+.hero{text-align:center;padding:60px 20px;position:sticky;top:0;background:rgba(2,6,23,.75);backdrop-filter:blur(12px);z-index:10}
+h1{font-size:3rem;text-shadow:0 0 20px cyan}
+input{width:min(800px,92%);padding:15px;border-radius:40px;border:none;font-size:1rem;background:rgba(255,255,255,.08);color:#fff;backdrop-filter:blur(14px);box-shadow:0 10px 30px rgba(0,0,0,.18)}
+input::placeholder{color:rgba(255,255,255,.75)}
+.symbol{position:fixed;font-size:30px;opacity:.15;animation:float 15s linear infinite}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:22px;padding:25px}
+.card{
+background:rgba(10,20,38,.72);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.1);
+border-radius:24px;padding:20px;
+box-shadow:0 0 40px rgba(0,255,255,.08);
+transition:.4s;
+animation:rise 1s ease;
+}
+.card:hover{transform:translateY(-12px) scale(1.03);box-shadow:0 0 35px rgba(0,255,255,.35)}
+h2{color:#67e8f9;margin-bottom:10px}
+pre{white-space:pre-wrap;line-height:1.6;animation:formula-glow 6s ease-in-out infinite;transition:transform .3s ease;display:inline-block;padding:14px 16px;border-radius:18px;background:rgba(255,255,255,.03);position:relative;overflow:hidden;}
+pre::before{content:'';position:absolute;top:0;left:-100%;width:120%;height:100%;background:linear-gradient(120deg,transparent,rgba(56,189,248,.18),transparent);transform:skewX(-20deg);animation:formula-shimmer 5.5s ease-in-out infinite;}
+pre span{position:relative;z-index:1;}
+.card:hover pre{transform:translateY(-2px) scale(1.01);}
+@keyframes rise{from{opacity:0;transform:translateY(40px)}to{opacity:1;transform:none}}
+@keyframes formula-glow{0%{box-shadow:0 0 0 rgba(96,165,250,0);background:rgba(255,255,255,.03)}25%{box-shadow:0 0 18px rgba(96,165,250,0.08);background:rgba(255,255,255,.05)}50%{box-shadow:0 0 30px rgba(56,189,248,0.14);background:rgba(255,255,255,.08)}75%{box-shadow:0 0 18px rgba(96,165,250,0.08);background:rgba(255,255,255,.05)}100%{box-shadow:0 0 0 rgba(96,165,250,0);background:rgba(255,255,255,.03)}}
+@keyframes formula-shimmer{0%{left:-120%}50%{left:100%}100%{left:100%}}
+
+/* New animations */
+@keyframes float{0%{transform:translateY(0) rotate(0deg);opacity:.12}50%{transform:translateY(-18px) rotate(-6deg);opacity:.18}100%{transform:translateY(0) rotate(0deg);opacity:.12}}
+
+.hero h1{display:inline-flex;align-items:center;gap:12px}
+.title-emoji{display:inline-block;font-size:1.6em;transform-origin:center;animation:emoji-bob 3s ease-in-out infinite}
+@keyframes emoji-bob{0%{transform:translateY(0) rotate(0)}50%{transform:translateY(-6px) rotate(-8deg)}100%{transform:translateY(0) rotate(0)}}
+
+input{transition:all .25s ease}
+input:focus{outline:none;box-shadow:0 8px 30px rgba(34,211,238,.08),0 0 10px rgba(102,255,255,.06);transform:translateY(-3px)}
+
+/* make card entrance slightly faster and allow stagger */
+.card{animation:rise .6s cubic-bezier(.22,.9,.36,1) both, card-float 4s ease-in-out infinite}
+
+@keyframes card-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+
+/* Signature styles */
+.signature{
+	font-family:'Lobster','Poppins',cursive;
+	font-size:1.05rem;
+	margin-top:12px;
+	background:linear-gradient(90deg,#7dd3fc,#a78bfa,#f472b6);
+	-webkit-background-clip:text;
+	background-clip:text;
+	color:transparent;
+	text-shadow:0 6px 20px rgba(124,58,237,.12);
+	display:inline-block;
+	transform-origin:left center;
+	animation:sig-pop .9s cubic-bezier(.2,.9,.3,1) both;
+}
+@keyframes sig-pop{from{opacity:0;transform:translateY(10px) scale(.98)}to{opacity:1;transform:none}}
+
+.signature-footer{position:fixed;right:18px;bottom:14px;font-family:'Poppins',sans-serif;font-weight:700;font-size:1rem;opacity:.92;background:linear-gradient(135deg,rgba(59,130,246,.18),rgba(236,72,153,.18));padding:10px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.14);box-shadow:0 12px 35px rgba(59,130,246,.22),0 0 0 1px rgba(255,255,255,.08);transition:transform .18s ease,opacity .18s;cursor:default;animation:footer-glow 4s ease-in-out infinite;color:#fff;text-shadow:0 0 18px rgba(56,189,248,.4)}
+.signature-footer:hover{transform:translateY(-8px) scale(1.02);opacity:1}
+
+@keyframes footer-glow{0%,100%{transform:translateY(0) scale(1);opacity:.92;box-shadow:0 12px 35px rgba(59,130,246,.2),0 0 0 1px rgba(255,255,255,.08)}50%{transform:translateY(-4px) scale(1.01);opacity:1;box-shadow:0 18px 45px rgba(59,130,246,.32),0 0 0 1px rgba(255,255,255,.12)}}
+
+/* Subtitle */
+.subtitle{font-family:'Playfair Display','Lobster',serif;display:block;font-size:1.4rem;margin-top:6px;color:transparent;background:linear-gradient(90deg,#ffd6a5,#fbcfe8,#c7f9ff);-webkit-background-clip:text;background-clip:text;text-shadow:0 10px 30px rgba(124,58,237,.08);letter-spacing:1px;animation:sub-appear .9s cubic-bezier(.2,.9,.3,1) both}
+@keyframes sub-appear{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* Hero note style per user request */
+.hero-note{font-family:'Lobster','Poppins',cursive;font-size:1.55rem;font-weight:700;margin-top:8px;color:#fff;background:linear-gradient(90deg,#ff5f7a,#fbbf24,#38bdf8);-webkit-background-clip:text;background-clip:text;letter-spacing:1px;text-shadow:0 12px 28px rgba(0,0,0,.22);transform-origin:left center;display:inline-block;mix-blend-mode:screen}
+</style>
+</head>
+<body>
+<div class="symbol" style="left:5%;top:10%">π</div>
+<div class="symbol" style="left:80%;top:20%">∑</div>
+<div class="symbol" style="left:60%;top:70%">√</div>
+<div class="symbol" style="left:25%;top:80%">∫</div>
+
+<div class="hero">
+<h1><span class="title-emoji">🚀</span> The Formula Book</h1>
+<div class="signature">Er.PIyush Tiwari</div>
+<input id="search" placeholder="Search here buddy...">
+<p class="hero-note">only backbenchers are allowed</p><br>
+</div>
+
+<div class="grid" id="grid">
+<div class="card"><h2>Sets</h2><pre>
+n(A∪B)=n(A)+n(B)−n(A∩B)
+n(A∩B)=n(A)+n(B)−n(A∪B)
+n(A−B)=n(A)−n(A∩B)
+(A∪B)'=A'∩B'
+(A∩B)'=A'∪B'
+A⊆B ⇔ A∪B=B, A∩B=A
+</pre></div>
+
+<div class="card"><h2>Relations & Functions</h2><pre>
+f:A→B, domain=A, codomain=B
+One-One: f(x1)=f(x2)⇒x1=x2
+Onto: range=B
+Bijective=one-one+onto
+Inverse: f⁻¹(f(x))=x
+Composite: (g∘f)(x)=g(f(x))
+</pre></div>
+
+<div class="card"><h2>Mathematical Reasoning</h2><pre>
+If p⇒q, contrapositive: ¬q⇒¬p
+Converse: q⇒p
+¬(p∧q)=¬p∨¬q
+¬(p∨q)=¬p∧¬q
+Tautology: always true
+Contradiction: always false
+</pre></div>
+
+<div class="card"><h2>Trigonometric Functions</h2><pre>
+sin²θ+cos²θ=1
+1+tan²θ=sec²θ
+1+cot²θ=cosec²θ
+sin(A±B)=sinAcosB±cosAsinB
+cos(A±B)=cosAcosB∓sinAsinB
+tan(A±B)=(tanA±tanB)/(1∓tanAtanB)
+sin2A=2sinAcosA
+cos2A=cos²A−sin²A
+tan2A=2tanA/(1−tan²A)
+</pre></div>
+
+<div class="card"><h2>Complex Numbers</h2><pre>
+i²=−1
+z=a+ib
+|z|=√(a²+b²)
+arg z=tan⁻¹(b/a)
+z̄=a−ib
+z×z̄=|z|²
+</pre></div>
+
+<div class="card"><h2>Quadratic Equations</h2><pre>
+ax²+bx+c=0
+D=b²−4ac
+x=[−b±√D]/(2a)
+α+β=−b/a
+αβ=c/a
+D>0 real distinct, D=0 equal, D<0 complex
+</pre></div>
+
+<div class="card"><h2>Linear Inequalities</h2><pre>
+ax+b>0, ax+b<0
+ax+b≥0, ax+b≤0
+Multiply by −1 reverses inequality
+Solve by sign chart or transposition
+Interval notation: (a,b), [a,b], (a,b]
+</pre></div>
+
+<div class="card"><h2>Permutations & Combinations</h2><pre>
+nPr=n!/(n−r)!
+nCr=n!/[r!(n−r)!]
+nCr=nC(n−r)
+P(n,r)=nCr·r!
+When order matters use nPr
+When order does not matter use nCr
+</pre></div>
+
+<div class="card"><h2>Binomial Theorem</h2><pre>
+(a+b)^n=Σ_{r=0}^n nCr a^{n−r} b^r
+General term: T_{r+1}=nCr a^{n−r} b^r
+Sum of coeffs=2^n
+Middle term when n even has two
+</pre></div>
+
+<div class="card"><h2>Sequence & Series</h2><pre>
+AP: a_n=a+(n−1)d
+S_n=n/2[2a+(n−1)d]
+GP: a_n=ar^{n−1}
+S_n=a(1−r^n)/(1−r), r≠1
+Sum∞ = a/(1−r), |r|<1
+</pre></div>
+
+<div class="card"><h2>Straight Lines</h2><pre>
+y=mx+c
+ax+by+c=0
+Slope m=−a/b
+Point-slope: y−y1=m(x−x1)
+Distance to line: |ax1+by1+c|/√(a²+b²)
+Angle between lines: tanθ=| (m1−m2)/(1+m1m2) |
+</pre></div>
+
+<div class="card"><h2>Conic Sections</h2><pre>
+Circle:(x−h)²+(y−k)²=r²
+Parabola:y²=4ax
+Ellipse:x²/a²+y²/b²=1
+Hyperbola:x²/a²−y²/b²=1
+Eccentricity: e=c/a, e=1 parabola
+</pre></div>
+
+<div class="card"><h2>3D Geometry</h2><pre>
+Distance between P,Q: √[(x2−x1)²+(y2−y1)²+(z2−z1)²]
+Direction ratios: l:m:n
+Line through A,B:
+(x−x1)/(x2−x1)=(y−y1)/(y2−y1)=(z−z1)/(z2−z1)
+Plane: ax+by+cz+d=0
+</pre></div>
+
+<div class="card"><h2>Limits & Derivatives</h2><pre>
+lim_{x→a}f(x)=L
+lim_{x→0}sinx/x=1
+lim_{x→0}(1+x)^{1/x}=e
+f'(x)=lim_{h→0}[f(x+h)−f(x)]/h
+d/dx(x^n)=nx^{n−1}
+d/dx(sinx)=cosx
+d/dx(cosx)=−sinx
+</pre></div>
+
+<div class="card"><h2>Statistics</h2><pre>
+Mean=Σx/n
+Median=middle value
+Mode=value with highest freq
+Variance=Σ(x−x̄)²/n
+SD=√variance
+</pre></div>
+
+<div class="card"><h2>Probability</h2><pre>
+P(E)=n(E)/n(S)
+0≤P(E)≤1
+P(E')=1−P(E)
+P(A∪B)=P(A)+P(B)−P(A∩B)
+P(A∩B)=P(A)P(B|A)
+</pre></div>
+</div>
+
+<div class="signature-footer">Er.PIyush tiwari</div>
+
+<script>
+document.getElementById('search').addEventListener('input',e=>{
+const v=e.target.value.toLowerCase();
+document.querySelectorAll('.card').forEach(c=>{
+c.style.display=c.innerText.toLowerCase().includes(v)?'block':'none';
+});
+});
+
+document.addEventListener('DOMContentLoaded',()=>{
+	const cards = document.querySelectorAll('.card');
+	cards.forEach((c,i)=>{
+		c.style.animationDelay = (i * 90) + 'ms';
+	});
+
+	const speakBuddy = () => {
+		if ('speechSynthesis' in window) {
+			const utterance = new SpeechSynthesisUtterance('Welcome buddy, scroll down to know more');
+			utterance.rate = 0.95;
+			utterance.pitch = 0.95;
+			utterance.volume = 0.75;
+			speechSynthesis.speak(utterance);
+		}
+	};
+
+	document.addEventListener('click', speakBuddy);
+	document.addEventListener('keydown', speakBuddy);
+});
+</script>
+</body></html>
